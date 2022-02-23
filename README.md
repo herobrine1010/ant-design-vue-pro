@@ -61,7 +61,7 @@ Go to yunxiao and see detailed description!
 
 - Compiles and minifies for production 
 ``` 
-yarn run build
+yarn run build 
 ```
 
 - Lints and fixes files
