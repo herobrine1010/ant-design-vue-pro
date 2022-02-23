@@ -57,6 +57,7 @@ yarn install
 ```
 yarn run serve
 ```
+Go to yunxiao and see detailed description! 
 
 - Compiles and minifies for production
 ```
