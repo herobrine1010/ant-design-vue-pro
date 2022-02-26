@@ -298,7 +298,7 @@
 </template>
 
 <script>
-import { adminCreateOrganization } from '@/api/planet' // 引入后台接口
+import { adminCreateOrganization, adminCreateOrganizationOperator } from '@/api/planet' // 引入后台接口
 import { SHOW_NAME } from '@/store/mutation-types'
 import storage from 'store'
 export default {
@@ -370,7 +370,24 @@ export default {
          if (res.success) {
           this.current += 1
           this.accountReturnDetail = res.data
-          this.$message.info('创建成功!')
+          this.$message.success('创建成功!')
+           // 创建完恒星号再创建联系人方式的逻辑我改写在后端了，但是前端的以下部分不舍得删。。。
+           // let {operatorName, operatorStudentId, operatorPhone, operatorWxId, operatorMail} = this.accountDetail
+           // adminCreateOrganizationOperator({
+           //   operatorName,
+           //   studentId: operatorStudentId,
+           //   phone: operatorPhone,
+           //   wxId: operatorWxId,
+           //   mail: operatorMail,
+           //   organizationId: res.data.id,
+           // })
+           // .then(res => {
+           //   if(res.success) {
+           //     this.$message.success('联系人创建成功！')
+           //   } else {
+           //     this.$message.info(res.meg)
+           //   }
+           // })
          } else {
            this.$message.info(res.msg)
          }

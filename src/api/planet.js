@@ -5,6 +5,7 @@ const userApi = {
    adminBlockUser: '/userBlock/adminBlockUser', // 封禁
    adminMuteUser: '/userBlock/adminMuteUser', // 禁言
    adminCreateOrganization: '/organization/adminCreateOrganization',
+   adminCreateOrganizationOperator: '/organizationOperator/addOperator',
    getTeamByUserId: '/team/getTeamByUserId', // 查询某用户发起的组队
    adminGetTeamList: '/team/adminGetTeamList', // 管理员分页获取济人组队
    getTeamByUserIdWithPage: '/team/getTeamByUserIdWithPage',
@@ -60,6 +61,14 @@ export function adminUnblockUser (parameter) {
 export function adminCreateOrganization (parameter) {
   return request({
     url: userApi.adminCreateOrganization,
+    method: 'post',
+    data: parameter
+  })
+}
+
+export function adminCreateOrganizationOperator (parameter) {
+  return request({
+    url: userApi.adminCreateOrganizationOperator,
     method: 'post',
     data: parameter
   })
